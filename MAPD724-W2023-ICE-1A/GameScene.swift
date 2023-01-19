@@ -5,10 +5,6 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    
-    
-   
-    
 override func sceneDidLoad()
     {
         print("Loaded GameScene")
