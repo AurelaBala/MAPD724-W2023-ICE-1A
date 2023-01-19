@@ -1,8 +1,9 @@
 import GameplayKit
 import SpriteKit
 
-class GameObject : SKSpriteNode
+class GameObject : SKSpriteNode, GameProtocol
 {
+    
     //instance members
     var horizonalSpeed: CGFloat?
     var verticalSpeed: CGFloat?
@@ -36,5 +37,26 @@ class GameObject : SKSpriteNode
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //GameProtocol Functions
+    func Start()
+    {
+        <#code#>
+    }
+    
+    func Update()
+    {
+        <#code#>
+    }
+    
+    func CheckBounds()
+    {
+        <#code#>
+    }
+    
+    func Reset()
+    {
+        <#code#>
     }
 }
