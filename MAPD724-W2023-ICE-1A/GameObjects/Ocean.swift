@@ -7,6 +7,7 @@ class Ocean : GameObject
     init()
     {
         super.init(imageString: "ocean", initialScale: 2.0)
+        Start()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -15,6 +16,7 @@ class Ocean : GameObject
     
     override func Start()
     {
+        Reset()
         zPosition = 0
         verticalSpeed = 5.0
     }

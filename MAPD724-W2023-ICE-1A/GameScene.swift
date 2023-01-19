@@ -5,9 +5,16 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    var ocean: Ocean?
+    
 override func sceneDidLoad()
     {
-        print("Loaded GameScene")
+        name = "FIRST GAME"
+        
+        //add ocean to the game scene
+        ocean = Ocean()
+        ocean?.Reset()
+        addChild(ocean!)
     }
     
     
@@ -43,7 +50,8 @@ override func sceneDidLoad()
     }
     
     
-    override func update(_ currentTime: TimeInterval) {
-        
+    override func update(_ currentTime: TimeInterval)
+    {
+        ocean?.Update()
     }
 }
