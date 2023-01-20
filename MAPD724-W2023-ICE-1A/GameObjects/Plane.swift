@@ -43,4 +43,9 @@ class Plane : GameObject
         position.y = -495
     }
     
+    func TouchMove(newPos: CGPoint)
+    {
+        position = newPos
+    }
+    
 }

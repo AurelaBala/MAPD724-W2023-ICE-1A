@@ -3,13 +3,21 @@ import AVFoundation
 import SpriteKit
 import GameplayKit
 
+var screenSize = UIScreen.main.bounds
+var screenWidth: CGFloat?
+var screenHeight: CGFloat?
+
 class GameScene: SKScene {
     
     var ocean1: Ocean?
     var ocean2: Ocean?
+    var plane: Plane?
     
 override func sceneDidLoad()
     {
+        
+        screenWidth = frame.width
+        screenHeight = frame.height
         name = "FIRST GAME"
         
         //add ocean1 to the game scene
@@ -21,21 +29,27 @@ override func sceneDidLoad()
         ocean2 = Ocean()
         ocean2?.position.y = -773
         addChild(ocean2!)
+        
+        //add plane to the Scene
+        plane = Plane()
+        plane?.Reset()
+        addChild(plane!)
+        
     }
     
     
     func touchDown(atPoint pos : CGPoint)
     {
-       print("Touch down")
+        plane?.TouchMove(newPos: CGPoint(x: pos.x, y: -495))
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        print("Touch moved")
+        plane?.TouchMove(newPos: CGPoint(x: pos.x, y: -495))
         
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        print("Touch up")
+        plane?.TouchMove(newPos: CGPoint(x: pos.x, y: -495))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -60,5 +74,6 @@ override func sceneDidLoad()
     {
         ocean1?.Update()
         ocean2?.Update()
+        plane?.Update()
     }
 }
