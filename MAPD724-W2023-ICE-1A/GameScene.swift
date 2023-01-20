@@ -5,16 +5,22 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    var ocean: Ocean?
+    var ocean1: Ocean?
+    var ocean2: Ocean?
     
 override func sceneDidLoad()
     {
         name = "FIRST GAME"
         
-        //add ocean to the game scene
-        ocean = Ocean()
-        ocean?.Reset()
-        addChild(ocean!)
+        //add ocean1 to the game scene
+        ocean1 = Ocean()
+        ocean1?.Reset()
+        addChild(ocean1!)
+        
+        //add ocean2 to the game scene
+        ocean2 = Ocean()
+        ocean2?.position.y = -773
+        addChild(ocean2!)
     }
     
     
@@ -52,6 +58,7 @@ override func sceneDidLoad()
     
     override func update(_ currentTime: TimeInterval)
     {
-        ocean?.Update()
+        ocean1?.Update()
+        ocean2?.Update()
     }
 }
